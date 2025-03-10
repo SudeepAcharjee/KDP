@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  /* outline: 2px solid lime; */
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --h1Size: clamp(1.5rem, 7vw + 1rem, 4rem);
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+}
+
+h1 {
+  font-size: var(--h1Size);
+}
+
+/* Navbar */
+.sideBar{
+  backdrop-filter: blur(8px) saturate(100%);
+  -webkit-backdrop-filter: blur(8px) saturate(100%);
+  background-color: rgba(62, 49, 29, 0.75);
+}
+
+.backdropFilter {
+  background-image: 
+      radial-gradient(at 47% 33%, hsl(180.00, 0%, 0%) 0, transparent 60%), 
+      radial-gradient(at 82% 65%, hsl(218.00, 39%, 11%) 0, transparent 80%);
+  backdrop-filter: blur(12px) saturate(182%);
+  -webkit-backdrop-filter: blur(12px) saturate(182%);
+  background-color: rgba(255, 255, 255, 0.15);
+}
+.particle-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.particle {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background-color: white;
+  border-radius: 50%;
+  animation: fall 5s infinite linear;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-10px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  display: flex;
+  white-space: nowrap;
+  animation: scroll 15s linear infinite;
+}
+/* Add this CSS to your global styles (e.g., globals.css or as a style tag/component) */
+@keyframes beam {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.beam-border {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem; /* Match card rounded-2xl */
+}
+
+.beam-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 2px; /* Adjust thickness */
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+  background-size: 200% 100%;
+  animation: beam 3s linear infinite;
+  mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: xor;
+  pointer-events: none; /* Make sure it doesn't block interactions */
+}
