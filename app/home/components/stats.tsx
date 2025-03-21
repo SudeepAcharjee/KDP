@@ -1,6 +1,7 @@
 "use client";
 
-import Image from "next/image";
+import Link from "next/link";
+import { FaInstagram } from "react-icons/fa"; // Import Instagram icon
 
 const services = [
   {
@@ -9,6 +10,8 @@ const services = [
     description:
       "We handle everything from concept to execution, ensuring a seamless and unforgettable event.",
     image: "/images/event-planning.jpg",
+    link: "/services/event-planning",
+    instagram: "https://instagram.com/eventplanning_official",
   },
   {
     category: "Artist Management",
@@ -16,6 +19,8 @@ const services = [
     description:
       "Maximize exposure and career growth with our tailored artist representation and management services.",
     image: "/images/artist-management.webp",
+    link: "/services/artist-management",
+    instagram: "https://instagram.com/artistmanagement_official",
   },
   {
     category: "PR & Media",
@@ -23,6 +28,8 @@ const services = [
     description:
       "Enhance your brand’s visibility with media outreach, press releases, and PR campaigns that make an impact.",
     image: "/images/pr-media.png",
+    link: "/services/pr-media",
+    instagram: "https://instagram.com/prmedia_official",
   },
   {
     category: "Wedding Planning",
@@ -30,13 +37,17 @@ const services = [
     description:
       "Create the wedding of your dreams with expert planning, decor, and coordination services.",
     image: "/images/wedding-planning.png",
+    link: "/services/wedding-planning",
+    instagram: "https://instagram.com/weddingplanning_official",
   },
   {
-    category: "Brand Marketing",
-    title: "Innovative Brand Marketing",
+    category: "DJ Services",
+    title: "DJ Radha",
     description:
-      "Boost your brand presence with targeted marketing strategies, social media campaigns, and engagement tactics.",
-    image: "/images/brand-marketing.jpg",
+      "DJ Radha is a talented DJ based in the UK, specializing in a dynamic fusion of Bollywood, Bollytech, Afro, and Techno genres.",
+    image: "/images/djradha.jpeg",
+    link: "/services/dj-radha",
+    instagram: "https://instagram.com/djradha_official",
   },
   {
     category: "Event Technology",
@@ -44,6 +55,8 @@ const services = [
     description:
       "Leverage the latest event tech for ticketing, audience engagement, and virtual event solutions.",
     image: "/images/event-technology.jpg",
+    link: "/services/event-technology",
+    instagram: "https://instagram.com/eventtech_official",
   },
 ];
 
@@ -51,7 +64,7 @@ const ServicesSection = () => {
   return (
     <div
       className="relative w-full py-32 px-6 bg-cover bg-center"
-      style={{ backgroundImage: "url('/images/aservice.png')" }} // Update with your background image path
+      style={{ backgroundImage: "url('/images/aservice.png')" }}
     >
       {/* Overlay for better text readability */}
       <div className="absolute inset-0 bg-black bg-opacity-0"></div>
@@ -62,22 +75,42 @@ const ServicesSection = () => {
           Discover how we can help you with event planning, artist management, PR, and brand marketing.
         </p>
 
+        {/* Grid Layout */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
           {services.map((service, index) => (
             <div key={index} className="bg-white shadow-lg rounded-lg overflow-hidden">
-              <Image
-                src={service.image}
-                alt={service.title}
-                width={400}
-                height={250}
-                className="w-full h-48 object-cover"
+              {/* Background Image Container */}
+              <div
+                className="w-full h-72 bg-gray-300 bg-cover bg-center"
+                style={{ backgroundImage: `url(${service.image})` }}
               />
+
+              {/* Service Details */}
               <div className="p-4 text-black">
                 <span className="text-sm text-gray-600 bg-gray-200 px-2 py-1 rounded-full">
                   {service.category}
                 </span>
-                <h3 className="mt-2 text-lg font-semibold">{service.title}</h3>
+
+                {/* Clickable Title */}
+                <h3 className="mt-2 text-lg font-semibold">
+                  <Link href={service.link} className="text-blue-600 hover:underline hover:text-blue-800 transition">
+                    {service.title}
+                  </Link>
+                </h3>
+
                 <p className="text-gray-600 mt-1 text-sm">{service.description}</p>
+
+                {/* Instagram Link */}
+                <div className="mt-4 flex justify-end">
+                  <a
+                    href={service.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-pink-500 hover:text-pink-600 transition"
+                  >
+                    <FaInstagram size={24} />
+                  </a>
+                </div>
               </div>
             </div>
           ))}
