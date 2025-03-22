@@ -45,11 +45,11 @@ const Contact = () => {
       </CustomSection>
       <div className="absolute inset-0">
         <Image
-          src="/images/conatctbg.jpeg"
+          src="/images/bgcontact.png"
           alt=""
           width={1560}
           height={1490}
-          className="w-full h-full object-cover object-center" />
+          className="w-full h-full object-cover object-center blur-md" />
       </div>
     </section></>
   );

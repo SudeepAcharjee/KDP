@@ -23,11 +23,11 @@ const services = [
     instagram: "https://instagram.com/artistmanagement_official",
   },
   {
-    category: "PR & Media",
-    title: "Strategic Public Relations",
+    category: "Dj Services",
+    title: "DJ AVYAKT",
     description:
-      "Enhance your brand’s visibility with media outreach, press releases, and PR campaigns that make an impact.",
-    image: "/images/pr-media.png",
+      "Dj Avyakt is a talented DJ based in the UK, specializing in a dynamic fusion of Bollywood, Bollytech, Afro, and Techno genres.",
+    image: "/images/djavyakt.jpeg",
     link: "/services/pr-media",
     instagram: "https://instagram.com/prmedia_official",
   },

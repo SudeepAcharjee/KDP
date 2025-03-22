@@ -88,7 +88,7 @@ const Navbar = () => {
                   isContact ? "scale-x-100" : "scale-x-0"
                 } group-hover:scale-x-100`}
               ></div>
-              <Link href="/contact">Contact</Link>
+              <Link href="/gallery">Gallery</Link>
             </motion.div>
           </motion.div>
           <div className="block lg:hidden justify-self-end">
@@ -143,7 +143,7 @@ const Navbar = () => {
             >
               <span>About</span>
             </Link>
-           z
+           
             <Link
               href="/blogs"
               onClick={toggleSidebar}
@@ -156,7 +156,7 @@ const Navbar = () => {
               onClick={toggleSidebar}
               className="border border-blue-400 w-full max-w-lg font-semibold text-text-2xl flex items-center justify-between rounded-full px-6 py-2"
             >
-              <span>Contact</span>
+              <span>Gallery</span>
             </Link>
           </div>
           <footer className="text-center py-4 w-full border-t border-gray-600">
