@@ -68,8 +68,8 @@ const Footer = () => {
               <div className="flex flex-col gap-1">
                 <span>Terms & Conditions</span>
                 <span>Privacy Policy</span>
-                <span>Refund & Cancellation</span>
-                <span>Code of Conduct</span>
+                <br></br>
+                <span>+44 7349 937923</span>
               </div>
             </div>
           </div>
