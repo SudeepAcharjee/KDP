@@ -27,13 +27,11 @@ const Footer = () => {
 </motion.div>
               <div className="flex flex-col space-y-4">
                 <p>
-                  We specialize in event planning, artist management, PR, and wedding planning.
-                  Whether it’s a corporate event, a private party, or a dream wedding, we bring 
-                  creativity and expertise to craft unforgettable experiences.
+                KDP Studios is a dynamic creative agency specializing in Event Planning, Artist Management, PR & Marketing, and Brand Consulting. With a passion for storytelling and a flair for innovation, we transform ideas into unforgettable experiences.
                 </p>
               </div>
               <div className="flex items-center gap-3">
-                <Image src="/icons/ig.svg" alt="Instagram" width={32} height={32} />
+               <Image src="/icons/ig.svg" alt="Instagram" width={32} height={32} /> 
                 <Image src="/icons/in.svg" alt="LinkedIn" width={32} height={32} />
                 <Image src="/icons/x.svg" alt="Twitter" width={32} height={32} />
                 <Image src="/icons/fb.svg" alt="Facebook" width={32} height={32} />

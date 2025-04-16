@@ -14,30 +14,30 @@ export default function ExpertiseSection() {
           viewport={{ once: true }}
           className="md:w-1/2"
         >
-          <h4 className="text-lg font-semibold text-red-700">Talent & Hiring Solutions</h4>
+          <h4 className="text-lg font-semibold text-red-700">Events & Collaborations</h4>
           <h2 className="text-4xl font-bold text-gray-900 mt-2 leading-tight">
-            Connecting Top Talent <br /> with the Right Opportunities
+            How We Organize Events <br /> & Why You Should Join Us
           </h2>
 
           <div className="mt-6 space-y-6">
             <div>
-              <h3 className="text-xl font-semibold text-gray-900">Smart Job Matching</h3>
+              <h3 className="text-xl font-semibold text-gray-900">Seamless Event Planning</h3>
               <p className="text-gray-600 mt-1">
-                Using AI-driven technology, we connect skilled professionals with companies that need their expertise.
+                From concept to execution, KDP Studios handles every detail of your event—ensuring it&apos;s impactful, creative, and unforgettable.
               </p>
             </div>
 
             <div>
-              <h3 className="text-xl font-semibold text-gray-900">Career Growth & Upskilling</h3>
+              <h3 className="text-xl font-semibold text-gray-900">Creative Team Collaboration</h3>
               <p className="text-gray-600 mt-1">
-                Providing job seekers with career development tools, training programs, and mentorship to enhance their skills.
+                We bring together photographers, filmmakers, designers, and strategists to create unique experiences that leave lasting impressions.
               </p>
             </div>
 
             <div>
-              <h3 className="text-xl font-semibold text-gray-900">Effortless Hiring for Businesses</h3>
+              <h3 className="text-xl font-semibold text-gray-900">Why Join KDP Studios?</h3>
               <p className="text-gray-600 mt-1">
-                Helping companies streamline recruitment, reducing hiring time while ensuring quality hires.
+                Whether you&apos;re a creator or a client, being part of KDP means tapping into a passionate community, top-tier events, and endless inspiration.
               </p>
             </div>
           </div>
@@ -53,8 +53,8 @@ export default function ExpertiseSection() {
         >
           <div className="relative w-full h-64 md:h-80 rounded-xl overflow-hidden">
             <Image
-              src="/images/work.png"
-              alt="Talent & Hiring Solutions"
+              src="/images/kdp.jpg"
+              alt="KDP Studios Event"
               layout="fill"
               objectFit="cover"
               className="rounded-xl"

@@ -11,7 +11,7 @@ const services = [
       "We handle everything from concept to execution, ensuring a seamless and unforgettable event.",
     image: "/images/event-planning.jpg",
     link: "/services/event-planning",
-    instagram: "https://instagram.com/eventplanning_official",
+    instagram: "https://www.instagram.com/kdp_studios/",
   },
   {
     category: "Artist Management",
@@ -20,7 +20,7 @@ const services = [
       "Maximize exposure and career growth with our tailored artist representation and management services.",
     image: "/images/artist-management.webp",
     link: "/services/artist-management",
-    instagram: "https://instagram.com/artistmanagement_official",
+    instagram: "https://www.instagram.com/kdp_studios/",
   },
   {
     category: "Dj Services",
@@ -29,7 +29,7 @@ const services = [
       "Dj Avyakt is a talented DJ based in the UK, specializing in a dynamic fusion of Bollywood, Bollytech, Afro, and Techno genres.",
     image: "/images/djavyakt.jpeg",
     link: "/services/pr-media",
-    instagram: "https://instagram.com/prmedia_official",
+    instagram: "https://www.instagram.com/kdp_studios/",
   },
   {
     category: "Wedding Planning",
@@ -38,7 +38,7 @@ const services = [
       "Create the wedding of your dreams with expert planning, decor, and coordination services.",
     image: "/images/wedding-planning.png",
     link: "/services/wedding-planning",
-    instagram: "https://instagram.com/weddingplanning_official",
+    instagram: "https://www.instagram.com/kdp_studios/",
   },
   {
     category: "DJ Services",
@@ -56,7 +56,7 @@ const services = [
       "Leverage the latest event tech for ticketing, audience engagement, and virtual event solutions.",
     image: "/images/event-technology.jpg",
     link: "/services/event-technology",
-    instagram: "https://instagram.com/eventtech_official",
+    instagram: "https://www.instagram.com/kdp_studios/",
   },
 ];
 

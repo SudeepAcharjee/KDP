@@ -23,7 +23,7 @@ const CoreValuesSection = () => {
         >
           <h2 className="text-3xl font-bold">Our Passion for Events</h2>
           <p className="text-gray-300 mt-3">
-            At **KDP Studios**, we transform moments into unforgettable experiences. Whether it&apos;s a luxurious wedding, an electrifying music event, or a high-profile PR launch, we bring your vision to life.
+            At KDP Studios, we transform moments into unforgettable experiences. Whether it&apos;s a luxurious wedding, an electrifying music event, or a high-profile PR launch, we bring your vision to life.
           </p>
 
           {/* Values */}
@@ -80,7 +80,7 @@ const CoreValuesSection = () => {
               transition={{ duration: 1.2, delay: 0.4, ease: "easeOut" }}
               className="bg-pink-100 p-6 rounded-xl shadow-lg"
             >
-              <h4 className="text-3xl font-bold text-yellow-500">500+</h4>
+              <h4 className="text-3xl font-bold text-yellow-500">50+</h4>
               <p className="text-gray-600 text-sm">Events Hosted</p>
             </motion.div>
 
@@ -90,7 +90,7 @@ const CoreValuesSection = () => {
               transition={{ duration: 1.2, delay: 0.6, ease: "easeOut" }}
               className="bg-pink-100 p-6 rounded-xl shadow-lg"
             >
-              <h4 className="text-3xl font-bold text-blue-500">100+</h4>
+              <h4 className="text-3xl font-bold text-blue-500">20+</h4>
               <p className="text-gray-600 text-sm">Artists & Celebrities</p>
             </motion.div>
           </div>

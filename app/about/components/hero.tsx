@@ -6,11 +6,11 @@ import { motion } from "framer-motion";
 const HeroSection = () => {
   return (
     <section
-      className="relative w-full h-screen flex flex-col items-center justify-center text-center text-black bg-cover bg-center bg-no-repeat"
-      style={{ backgroundImage: "url('/images/about.jpeg')" }}
+      className="relative w-full h-screen flex flex-col items-center justify-center text-center text-white bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: "url('/images/about.webp')" }}
     >
       {/* Overlay for better text visibility */}
-      <div className="absolute inset-0 bg-black bg-opacity-0"></div>
+      <div className="absolute inset-0 bg-white bg-opacity-0"></div>
 
       {/* Content with Framer Motion Animation */}
       <motion.div
@@ -21,10 +21,10 @@ const HeroSection = () => {
         viewport={{ once: false, amount: 0.5 }}
       >
         <h1 className="text-4xl md:text-5xl font-bold">
-          Transform Your Job Vancancy.
+        Crafting Moments, Elevating Brands
         </h1>
-        <p className="mt-4 text-lg md:text-xl text-gray-800 max-w-10xl">
-          Unlock growth opportunities, optimize strategies, and drive success with our tailored consulting solutions.
+        <p className="mt-4 text-lg md:text-xl text-white max-w-10xl">
+        At KDP Studios, we turn ideas into unforgettable experiences through expert event planning,<br></br> artist management, PR & marketing, and brand consulting.
         </p>
         <motion.button
           className="mt-6 px-6 py-3 text-lg font-semibold bg-gray-100 text-black rounded-full hover:bg-gray-300 transition"

@@ -2,9 +2,7 @@
 
 import CustomSection from "@/components/Layout/CustomSection";
 import Image from "next/image";
-
 import { useRef } from "react";
-
 import { motion } from "framer-motion";
 import useIntersectionObserver from "@/hooks/useIntersectionObserver";
 import { containerV, slideUpV } from "@/utils/Animation";
@@ -19,7 +17,7 @@ const HowWeWork = () => {
   const isTimelineInView = useIntersectionObserver(isTimelineRef, { threshold: 0.1 }, false);
 
   return (
-    <div className="relative w-full flex items-center justify-center bg-red-700 text-white py-2 md:py-36">
+    <div className="relative w-full flex items-center justify-center bg-black text-white py-2 md:py-36">
       <CustomSection className="flex-col gap-10">
         <motion.div
           ref={ref}
@@ -29,11 +27,12 @@ const HowWeWork = () => {
         >
           <motion.p
             variants={slideUpV}
-            className="font-bold text-[4rem] leading-[60px] md:leading-[44px]"
+            className="font-bold text-[3rem] md:text-[4rem] leading-[44px] md:leading-[60px] text-center"
           >
-            How We Connect Talent & Companies
+            How KDP Studios Captures Moments
           </motion.p>
         </motion.div>
+
         <div className="flex flex-col md:flex-row gap-10">
           <div className="w-full md:w-1/2 flex items-center justify-center">
             <motion.div
@@ -44,13 +43,14 @@ const HowWeWork = () => {
             >
               <Image
                 src="/images/work.png"
-                alt="Talent Acquisition Process"
+                alt="KDP Studios Work"
                 width={1200}
                 height={700}
                 className="object-center object-cover rounded-[8px] min-h-[300px] md:min-h-[450px] max-h-[500px] w-full md:max-w-[400px] transition-all duration-500"
               />
             </motion.div>
           </div>
+
           <div className="w-full md:w-1/2 flex px-10 md:border-l-4 border-white">
             <motion.div
               ref={isTimelineRef}
@@ -59,45 +59,50 @@ const HowWeWork = () => {
               variants={containerV}
               className="flex flex-col justify-between gap-10"
             >
+              {/* Step 1 */}
               <motion.div
                 variants={slideUpV}
                 className="pl-0 md:pl-6 pt-10 md:pt-0 relative flex flex-col gap-6 md:gap-1"
               >
                 <p className="text-[2.25rem] font-bold leading-[40px]">
-                  AI-Driven Job Matching
+                  Creative Concept & Planning
                 </p>
                 <p className="text-[1.25rem] leading-[20px]">
-                  We leverage intelligent algorithms to match skilled professionals with companies looking for top talent, ensuring the best fit for both.
+                  At KDP Studios, we start by understanding your vision. Our team crafts unique creative concepts tailored to your brand or story.
                 </p>
                 <div className="absolute top-0 md:top-1/2 -left-10 md:-left-20 transform -translate-y-1/2 w-[75px] h-[75px] rounded-full bg-white blur-[12px]"></div>
                 <div className="text-black absolute top-0 md:top-1/2 -left-10 md:-left-20 transform -translate-y-1/2 w-[75px] h-[75px] rounded-full flex items-center justify-center">
                   <p className="text-[3rem] font-bold">1</p>
                 </div>
               </motion.div>
+
+              {/* Step 2 */}
               <motion.div
                 variants={slideUpV}
                 className="pl-0 md:pl-6 pt-10 md:pt-0 relative flex flex-col gap-6 md:gap-1"
               >
                 <p className="text-[2.25rem] font-bold leading-[40px]">
-                  Career Development & Upskilling
+                  Production & Photography
                 </p>
                 <p className="text-[1.25rem] leading-[20px]">
-                  We provide career growth resources, training programs, and skill enhancement opportunities to help professionals stay competitive.
+                  From cinematic shoots to high-end photography, our expert crew captures stunning visuals that align perfectly with your goals.
                 </p>
                 <div className="absolute top-0 md:top-1/2 -left-10 md:-left-20 transform -translate-y-1/2 w-[75px] h-[75px] rounded-full bg-white blur-[12px]"></div>
                 <div className="text-black absolute top-0 md:top-1/2 -left-10 md:-left-20 transform -translate-y-1/2 w-[75px] h-[75px] rounded-full flex items-center justify-center">
                   <p className="text-[3rem] font-bold">2</p>
                 </div>
               </motion.div>
+
+              {/* Step 3 */}
               <motion.div
                 variants={slideUpV}
                 className="pl-0 md:pl-6 pt-10 md:pt-0 relative flex flex-col gap-6 md:gap-1"
               >
                 <p className="text-[2.25rem] font-bold leading-[40px]">
-                  Seamless Hiring Process
+                  Post-Production & Delivery
                 </p>
                 <p className="text-[1.25rem] leading-[20px]">
-                  Our platform streamlines recruitment, reducing hiring time for businesses while providing job seekers with fast-track opportunities.
+                  We polish every frame with expert editing and color grading, ensuring flawless visuals are delivered on time, every time.
                 </p>
                 <div className="absolute top-0 md:top-1/2 -left-10 md:-left-20 transform -translate-y-1/2 w-[75px] h-[75px] rounded-full bg-white blur-[12px]"></div>
                 <div className="text-black absolute top-0 md:top-1/2 -left-10 md:-left-20 transform -translate-y-1/2 w-[75px] h-[75px] rounded-full flex items-center justify-center">

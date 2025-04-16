@@ -1,8 +1,6 @@
 /* eslint-disable react/no-children-prop */
 // import Transition from "../home/components/try";
 import ExpertiseSection from "./components/Expertise";
-// import { Lamp } from "./components/Lamp";
-import WhyWeShine from "./components/Whyweshine";
 import HeroSection from "./components/hero";
 // import AboutConnect from "./components/connect";
 // import HeroSection from "./components/hero";
@@ -22,8 +20,8 @@ const About = () => {
       {/* <MoreDetails /> */}
       {/* <Transition/>
       <AboutConnect />
-      <Lamp /> */}
-      <WhyWeShine />
+      // <Lamp /> */}
+     
     </section>
   );
 };

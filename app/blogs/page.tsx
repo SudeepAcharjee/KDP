@@ -1,13 +1,20 @@
-import BlogSection from "./components/blogsections";
-import BlogHero from "./components/hero";
+import OnDemandSection from "./components/OnDemandSection";
 
-const BlogsPage = () => {
+import UpcomingWebinars from "./components/UpcomingWebinars";
+
+
+
+
+const WebinarPage = () => {
   return (
-    <section className="flex flex-col justify-center py-10 space-y-10">
-      <BlogHero />
-      <BlogSection />
-    </section>
+    <div className="">
+      
+        <UpcomingWebinars/>
+        <OnDemandSection/>
+
+
+    </div>
   );
 };
 
-export default BlogsPage;
+export default WebinarPage;
