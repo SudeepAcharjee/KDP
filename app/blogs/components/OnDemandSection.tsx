@@ -92,7 +92,7 @@ const OnDemandSection = () => {
         {/* Header */}
         <div className="w-full flex flex-col md:flex-row justify-between items-center gap-6">
           <h2 className="text-black text-[32px] leading-[42px] font-normal font-poppins tracking-[-0.02em]">
-            On-Demand
+            Events Held
           </h2>
           <div className="flex items-center justify-between w-full md:w-[351px] h-[42px] px-4 bg-[rgba(0,136,255,0.1)] border border-black rounded-md">
             <div className="flex items-center gap-[6px] w-full">
