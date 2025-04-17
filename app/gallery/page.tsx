@@ -2,11 +2,13 @@
 
 import React from "react";
 import Image from "next/image";
+import { FaFacebookF, FaTwitter, FaInstagram, FaLink } from "react-icons/fa";
 
 const events = [
   {
     name: "New Year Party",
     date: "December 31, 2024",
+    viewMoreLink: "https://mega.nz/file/8FgVGDBR#Kl53Uxfo7pi_1GMmoKgg_1UntQTwzE5Aoq_lWdyiPO0",
     images: [
       "/images/newyear1.jpeg",
       "/images/newyear2.jpeg",
@@ -19,6 +21,7 @@ const events = [
   {
     name: "Bolly Refreshers",
     date: "January 23, 2025",
+    viewMoreLink: "https://www.dropbox.com/scl/fo/75n0fs9u1tsom9g6oex4d/ALBu_i5opl1FBPgiOI7H5nk?rlkey=evjvbxbsrqacjtvteg7k7zohp&dl=0",
     images: [
       "/images/holi5.jpg",
       "/images/holi6.jpg",
@@ -28,17 +31,6 @@ const events = [
       "/images/holi4.jpg",
     ],
   },
-  {
-    name: "Kubernetes Live Workshop",
-    date: "May 20, 2024",
-    images: [
-      "/images/kube1.jpg",
-      "/images/kube2.jpg",
-      "/images/kube3.jpg",
-      "/images/kube4.jpg",
-      "/images/kube5.jpg",
-    ],
-  },
 ];
 
 const Gallery = () => {
@@ -46,7 +38,7 @@ const Gallery = () => {
     <section className="w-full py-16 bg-white">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-semibold text-center text-gray-800 mb-12">
-         KDP Event Gallery
+          KDP Event Gallery
         </h2>
 
         {events.map((event, idx) => (
@@ -62,7 +54,10 @@ const Gallery = () => {
             {/* Masonry Grid */}
             <div className="columns-1 sm:columns-2 md:columns-3 gap-4 space-y-4">
               {event.images.map((src, index) => (
-                <div key={index} className="break-inside-avoid overflow-hidden rounded-lg shadow bg-gray-200">
+                <div
+                  key={index}
+                  className="break-inside-avoid overflow-hidden rounded-lg shadow bg-gray-200"
+                >
                   <div className="relative w-full h-auto aspect-[3/2]">
                     <Image
                       src={src}
@@ -72,8 +67,56 @@ const Gallery = () => {
                       className="rounded-lg"
                     />
                   </div>
+                  {/* Social Icons */}
+                  <div className="flex justify-center gap-4 p-2 bg-white">
+                    <a
+                      href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(src)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-600 hover:text-blue-800"
+                    >
+                      <FaFacebookF />
+                    </a>
+                    <a
+                      href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(src)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-400 hover:text-blue-600"
+                    >
+                      <FaTwitter />
+                    </a>
+                    <a
+                      href={`https://www.instagram.com/`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-pink-500 hover:text-pink-700"
+                    >
+                      <FaInstagram />
+                    </a>
+                    <button
+                      onClick={() => {
+                        navigator.clipboard.writeText(window.location.origin + src);
+                        alert("Image link copied to clipboard!");
+                      }}
+                      className="text-gray-600 hover:text-black"
+                    >
+                      <FaLink />
+                    </button>
+                  </div>
                 </div>
               ))}
+            </div>
+
+            {/* View More Button */}
+            <div className="flex justify-center mt-6">
+              <a
+                href={event.viewMoreLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-full font-semibold transition duration-300"
+              >
+                View More
+              </a>
             </div>
           </div>
         ))}

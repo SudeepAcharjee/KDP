@@ -1,5 +1,5 @@
 "use client";
-
+import Link from 'next/link';
 import React from "react";
 import { motion } from "framer-motion";
 
@@ -26,13 +26,15 @@ const HeroSection = () => {
         <p className="mt-4 text-lg md:text-xl text-white max-w-10xl">
         At KDP Studios, we turn ideas into unforgettable experiences through expert event planning,<br></br> artist management, PR & marketing, and brand consulting.
         </p>
-        <motion.button
-          className="mt-6 px-6 py-3 text-lg font-semibold bg-gray-100 text-black rounded-full hover:bg-gray-300 transition"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          Contact Us
-        </motion.button>
+        <Link href="/events">
+  <motion.button
+    className="mt-6 px-6 py-3 text-lg font-semibold bg-gray-100 text-black rounded-full hover:bg-gray-300 transition"
+    whileHover={{ scale: 1.05 }}
+    whileTap={{ scale: 0.95 }}
+  >
+    Events We Held
+  </motion.button>
+</Link>
       </motion.div>
     </section>
   );
