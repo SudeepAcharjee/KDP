@@ -5,7 +5,7 @@ export default function HeroSection() {
   return (
     <div 
       className="relative w-full h-screen bg-cover bg-center overflow-hidden"
-      style={{ backgroundImage: "url('/images/eventhero.jpg')", filter: 'brightness(70%)' }}
+      style={{ backgroundImage: "url('/images/eventhero.jpg')", filter: 'brightness(100%)' }}
     >
       {/* Background overlay */}
       <div className="absolute inset-0 bg-purple-800 bg-opacity-40 z-10"></div>

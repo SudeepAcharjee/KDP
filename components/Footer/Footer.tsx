@@ -70,6 +70,7 @@ const Footer = () => {
                 <span>Privacy Policy</span>
                 <br></br>
                 <span>+44 7349 937923</span>
+                <span>Manager@kdpstudio.co.uk</span>
               </div>
             </div>
           </div>

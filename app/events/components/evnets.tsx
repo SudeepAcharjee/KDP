@@ -1,23 +1,23 @@
 'use client';
-import React, { useState, useEffect } from 'react';
-import Image from 'next/image';
+import React, { useState } from 'react';
+// import Image from 'next/image';
 
 // Mock event data
-const eventsData = [
-  {
-    id: 1,
-    title: "Stirling Bolly Finale",
-    image: "/images/event1.jpg",
-    month: "APRIL",
-    day: "18",
-    description:
-      "KDP Studios presents Season Finale Bollywood Night on April 18th at Fubar! Enjoy Bollywood beats by DJ Radha. Don't miss this unforgettable night!",
-    type: "Concert",
-    category: "Bollywood",
-    dayOfWeek: "Weekday",
-    link: "https://www.skiddle.com/whats-on/Stirling/Fubar/Stirling-Bolly-Finale/40918552/" // 👈 External link
-  }
-];
+// const eventsData = [
+//   {
+//     id: 1,
+//     title: "Stirling Bolly Finale",
+//     image: "/images/event1.jpg",
+//     month: "APRIL",
+//     day: "18",
+//     description:
+//       "KDP Studios presents Season Finale Bollywood Night on April 18th at Fubar! Enjoy Bollywood beats by DJ Radha. Don't miss this unforgettable night!",
+//     type: "Concert",
+//     category: "Bollywood",
+//     dayOfWeek: "Weekday",
+//     link: "" // 👈 External link
+//   }
+// ];
 
 // Filter options
 const dayOptions = ["All Days", "Weekday", "Weekend"];
@@ -25,34 +25,34 @@ const eventTypeOptions = ["All Types", "Concert", "Festival", "Fan Meeting"];
 const categoryOptions = ["Any Category", "K-Pop", "J-Pop", "C-Pop"];
 
 export default function UpcomingEvents() {
-  const [visibleItems, setVisibleItems] = useState(6);
+  // const [visibleItems, setVisibleItems] = useState(6);
   const [dayFilter, setDayFilter] = useState("All Days");
   const [eventTypeFilter, setEventTypeFilter] = useState("All Types");
   const [categoryFilter, setCategoryFilter] = useState("Any Category");
-  const [filteredEvents, setFilteredEvents] = useState(eventsData);
+  // const [filteredEvents, setFilteredEvents] = useState(eventsData);
 
-  useEffect(() => {
-    let filtered = [...eventsData];
+  // useEffect(() => {
+  //   let filtered = [...eventsData];
 
-    if (dayFilter !== "All Days") {
-      filtered = filtered.filter((event) => event.dayOfWeek === dayFilter);
-    }
+  //   if (dayFilter !== "All Days") {
+  //     filtered = filtered.filter((event) => event.dayOfWeek === dayFilter);
+  //   }
 
-    if (eventTypeFilter !== "All Types") {
-      filtered = filtered.filter((event) => event.type === eventTypeFilter);
-    }
+  //   if (eventTypeFilter !== "All Types") {
+  //     filtered = filtered.filter((event) => event.type === eventTypeFilter);
+  //   }
 
-    if (categoryFilter !== "Any Category") {
-      filtered = filtered.filter((event) => event.category === categoryFilter);
-    }
+  //   if (categoryFilter !== "Any Category") {
+  //     filtered = filtered.filter((event) => event.category === categoryFilter);
+  //   }
 
-    setFilteredEvents(filtered);
-    setVisibleItems(6);
-  }, [dayFilter, eventTypeFilter, categoryFilter]);
+  //   setFilteredEvents(filtered);
+  //   setVisibleItems(6);
+  // }, [dayFilter, eventTypeFilter, categoryFilter]);
 
-  const loadMore = () => {
-    setVisibleItems((prev) => prev + 3);
-  };
+  // const loadMore = () => {
+  //   setVisibleItems((prev) => prev + 3);
+  // };
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-12">
@@ -139,7 +139,7 @@ export default function UpcomingEvents() {
       </div>
 
       {/* Events Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {filteredEvents.slice(0, visibleItems).map((event) => (
           <a
             key={event.id}
@@ -175,10 +175,10 @@ export default function UpcomingEvents() {
             </div>
           </a>
         ))}
-      </div>
+      </div> */}
 
       {/* Load More Button */}
-      {filteredEvents.length > visibleItems && (
+      {/* {filteredEvents.length > visibleItems && (
         <div className="flex justify-center mt-12">
           <button
             onClick={loadMore}
@@ -187,7 +187,7 @@ export default function UpcomingEvents() {
             Load More
           </button>
         </div>
-      )}
+      )} */}
     </div>
   );
 }
