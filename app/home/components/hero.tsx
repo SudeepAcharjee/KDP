@@ -100,10 +100,10 @@ const HomeHero = () => {
   animate="visible"
   transition={{ delay: 3 }}
 >
-  <Link href="/contact">
+  <Link href="/events">
     <div className="relative mt-6 px-6 py-3 text-white text-lg font-semibold bg-gradient-to-r from-pink-500 to-purple-600 rounded-full overflow-hidden shadow-lg transition-all duration-300 group">
       <span className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-500 opacity-0 group-hover:opacity-100 transition-all duration-500"></span>
-      <span className="relative z-10">Book Your Event</span>
+      <span className="relative z-10">Our Event</span>
       <span className="absolute -inset-1 bg-white opacity-20 blur-md"></span>
       <span className="absolute w-10 h-10 bg-white opacity-25 rounded-full blur-lg top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 animate-pulse"></span>
     </div>
