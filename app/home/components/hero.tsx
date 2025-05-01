@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 import { containerV, slideDownV } from "@/utils/Animation";
 
 const words = [
-  "Events | Artist | PR | Wedding Planner",
+  "Events | Artist | PR ",
   "Creating Unforgettable Experiences and Memories",
   "Bringing Your Vision to Life",
   "Elevating Your Events",
@@ -90,7 +90,7 @@ const HomeHero = () => {
           animate="visible"
           className="text-lg mt-3 max-w-2xl"
         >
-          Elevate your events with our expert planning services. From weddings to corporate events, brand marketing, and artist PR, we bring your vision to life with precision and creativity.
+          Elevate your events with our expert planning services. For corporate events, brand marketing, and artist PR, we bring your vision to life with precision and creativity.
         </motion.p>
 
         {/* Call to Action */}
