@@ -6,7 +6,7 @@ import path from "path";
 const SMTP_HOST = "smtp.gmail.com";
 const SMTP_PORT = 465;
 const SMTP_USER = "sudeepacharjeegp@gmail.com";
-const SMTP_PASSWORD = "gcwl thth qmio gamc "; // ⚠️ Avoid hardcoding passwords in your code
+const SMTP_PASSWORD = ""; // ⚠️ Avoid hardcoding passwords in your code
 const SMTP_FROM_EMAIL = "sudeepacharjeegp@gmail.com";
 
 const transporter = nodemailer.createTransport({

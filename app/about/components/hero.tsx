@@ -7,7 +7,7 @@ const HeroSection = () => {
   return (
     <section
       className="relative w-full h-screen flex flex-col items-center justify-center text-center text-white bg-cover bg-center bg-no-repeat"
-      style={{ backgroundImage: "url('/images/about.webp')" }}
+      style={{ backgroundImage: "url('/images/aboutbg.png')" }}
     >
       {/* Overlay for better text visibility */}
       <div className="absolute inset-0 bg-white bg-opacity-0"></div>

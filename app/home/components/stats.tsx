@@ -4,47 +4,47 @@ import Link from "next/link";
 import { FaInstagram } from "react-icons/fa"; // Import Instagram icon
 
 const services = [
-  {
-    category: "Event Planning",
-    title: "Comprehensive Event Planning",
-    description:
-      "We handle everything from concept to execution, ensuring a seamless and unforgettable event.",
-    image: "/images/event-planning.jpg",
-    link: "/services/event-planning",
-    instagram: "https://www.instagram.com/kdp_studios/",
-  },
-  {
-    category: "Artist Management",
-    title: "Professional Artist Management",
-    description:
-      "Maximize exposure and career growth with our tailored artist representation and management services.",
-    image: "/images/artist-management.webp",
-    link: "/services/artist-management",
-    instagram: "https://www.instagram.com/kdp_studios/",
-  },
+  // {
+  //   category: "Event Planning",
+  //   title: "Comprehensive Event Planning",
+  //   description:
+  //     "We handle everything from concept to execution, ensuring a seamless and unforgettable event.",
+  //   image: "/images/event-planning.jpg",
+  //   link: "/services/event-planning",
+  //   instagram: "https://www.instagram.com/kdp_studios/",
+  // },
+  // {
+  //   category: "Artist Management",
+  //   title: "Professional Artist Management",
+  //   description:
+  //     "Maximize exposure and career growth with our tailored artist representation and management services.",
+  //   image: "/images/artist-management.webp",
+  //   link: "/services/artist-management",
+  //   instagram: "https://www.instagram.com/kdp_studios/",
+  // },
   {
     category: "Dj Services",
     title: "DJ AVYAKT",
     description:
-      "Dj Avyakt is a talented DJ based in the UK, specializing in a dynamic fusion of Bollywood, Bollytech, Afro, and Techno genres.",
+      "The Indotech Authority: A master of the mesmerizing Indotech genre, DJ Avyakt has been captivating audiences with his unique sound for over a decade",
     image: "/images/djavyakt.jpeg",
     link: "/services/pr-media",
     instagram: "https://www.instagram.com/kdp_studios/",
   },
-  {
-    category: "Wedding Planning",
-    title: "Luxury Wedding Planning",
-    description:
-      "Create the wedding of your dreams with expert planning, decor, and coordination services.",
-    image: "/images/wedding-planning.png",
-    link: "/services/wedding-planning",
-    instagram: "https://www.instagram.com/kdp_studios/",
-  },
+  // {
+  //   category: "Wedding Planning",
+  //   title: "Luxury Wedding Planning",
+  //   description:
+  //     "Create the wedding of your dreams with expert planning, decor, and coordination services.",
+  //   image: "/images/wedding-planning.png",
+  //   link: "/services/wedding-planning",
+  //   instagram: "https://www.instagram.com/kdp_studios/",
+  // },
   {
     category: "DJ Services",
     title: "DJ Radha",
     description:
-      "DJ Radha is a talented DJ based in the UK, specializing in a dynamic fusion of Bollywood, Bollytech, Afro, and Techno genres.",
+      "The Young Pioneer of Sound: Hailing as the youngest DJ in town, DJ Radha brings a fresh and dynamic perspective to the Bollywood music scene",
     image: "/images/djradha.jpeg",
     link: "/services/dj-radha",
     instagram: "https://instagram.com/djradha_official",
