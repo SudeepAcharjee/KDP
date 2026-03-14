@@ -1,117 +1,174 @@
 "use client";
 
-import CustomSection from "@/components/Layout/CustomSection";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { containerV, slideDownV } from "@/utils/Animation";
+import { FaArrowRight, FaMagic } from "react-icons/fa";
+import Image from "next/image";
 
 const words = [
-  "Events | Artist | PR ",
-  "Creating Unforgettable Experiences and Memories",
-  "Bringing Your Vision to Life",
-  "Elevating Your Events",
+  "Event Management",
+  "Artist Management",
+  "Digital Marketing",
+  "Brand Strategy",
 ];
 
 const HomeHero = () => {
-  const [text, setText] = useState("");
-  const [wordIndex, setWordIndex] = useState(0);
-  const [charIndex, setCharIndex] = useState(0);
-  const [isDeleting, setIsDeleting] = useState(false);
-  const [startTyping, setStartTyping] = useState(false);
+  const [index, setIndex] = useState(0);
 
   useEffect(() => {
-    const delayTimer = setTimeout(() => setStartTyping(true), 2000);
-    return () => clearTimeout(delayTimer);
+    const timer = setInterval(() => {
+      setIndex((prev) => (prev + 1) % words.length);
+    }, 3000);
+    return () => clearInterval(timer);
   }, []);
 
-  useEffect(() => {
-    if (!startTyping) return;
-
-    const currentWord = words[wordIndex];
-    const typingSpeed = isDeleting ? 50 : 100;
-
-    if (!isDeleting && charIndex === currentWord.length) {
-      setTimeout(() => setIsDeleting(true), 1500);
-    } else if (isDeleting && charIndex === 0) {
-      setIsDeleting(false);
-      setWordIndex((prev) => (prev + 1) % words.length);
-    }
-
-    const typing = setTimeout(() => {
-      setText(currentWord.substring(0, charIndex + (isDeleting ? -1 : 1)));
-      setCharIndex((prev) => prev + (isDeleting ? -1 : 1));
-    }, typingSpeed);
-
-    return () => clearTimeout(typing);
-  }, [charIndex, isDeleting, wordIndex, startTyping]);
-
   return (
-    <div className="relative flex items-center justify-center min-h-screen w-full overflow-hidden">
-      
-      {/* Background Video */}
-      <video 
-        className="absolute inset-0 w-full h-full object-cover z-0" 
-        autoPlay 
-        loop 
-        muted 
-        playsInline
-      >
-        <source src="/videos/hero.mov" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-
-      {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black/30 z-0"></div>
-
-      <CustomSection className="relative z-10 flex flex-col items-center text-center max-w-3xl text-white px-0">
-        
-        {/* Animated Heading */}
-        <motion.h1
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-4xl md:text-5xl font-bold leading-tight"
-        >
-          {text}
-          <motion.span
-            animate={{ opacity: [0, 1] }}
-            transition={{ duration: 0.8, repeat: Infinity }}
-          >
-            |
-          </motion.span>
-        </motion.h1>
-
-        {/* Description */}
-        <motion.p
-          variants={slideDownV}
-          initial="hidden"
-          animate="visible"
-          className="text-lg mt-3 max-w-2xl"
-        >
-          Elevate your events with our expert planning services. For corporate events, brand marketing, and artist PR, we bring your vision to life with precision and creativity.
-        </motion.p>
-
-        {/* Call to Action */}
+    <section className="relative min-h-[90vh] w-full flex items-center justify-center overflow-hidden bg-white pt-20">
+      {/* Dynamic Background Elements */}
+      <div className="absolute inset-0 z-0">
         <motion.div
-  variants={slideDownV}
-  initial="hidden"
-  animate="visible"
-  transition={{ delay: 3 }}
->
-  <Link href="/events">
-    <div className="relative mt-6 px-6 py-3 text-white text-lg font-semibold bg-gradient-to-r from-pink-500 to-purple-600 rounded-full overflow-hidden shadow-lg transition-all duration-300 group">
-      <span className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-500 opacity-0 group-hover:opacity-100 transition-all duration-500"></span>
-      <span className="relative z-10">Our Event</span>
-      <span className="absolute -inset-1 bg-white opacity-20 blur-md"></span>
-      <span className="absolute w-10 h-10 bg-white opacity-25 rounded-full blur-lg top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 animate-pulse"></span>
-    </div>
-  </Link>
-</motion.div>
+          animate={{
+            scale: [1, 1.2, 1],
+            rotate: [0, 90, 0],
+            x: [0, 50, 0],
+          }}
+          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+          className="absolute -top-[10%] -left-[5%] w-[40%] h-[60%] bg-purple-100/50 rounded-full blur-[120px]"
+        />
+        <motion.div
+          animate={{
+            scale: [1, 1.3, 1],
+            rotate: [0, -45, 0],
+            x: [0, -30, 0],
+          }}
+          transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+          className="absolute -bottom-[10%] -right-[5%] w-[50%] h-[70%] bg-pink-50/60 rounded-full blur-[120px]"
+        />
+        <div className="absolute top-1/4 left-1/3 w-64 h-64 bg-orange-50/40 rounded-full blur-[100px]" />
+      </div>
 
-      </CustomSection>
-    </div>
+      <div className="container relative z-10 mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        {/* Left Content */}
+        <div className="text-left max-w-2xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-50 border border-purple-100 text-purple-600 text-xs font-bold uppercase tracking-widest mb-8"
+          >
+            <FaMagic className="animate-pulse" />
+            Leading Creative Agency
+          </motion.div>
+
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-4xl md:text-4xl lg:text-4xl font-black tracking-tight leading-[1.5] text-zinc-900 mb-8 pb-2"
+          >
+            Transforming <span className="inline-block whitespace-nowrap text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500">
+              {words[index]}
+            </span> Into Legacies
+          </motion.h1>
+
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-base md:text-lg text-zinc-500 font-medium leading-relaxed max-w-xl mb-8"
+          >
+            KDP Studios blends artistic vision with strategic excellence to elevate your brand and create unforgettable moments that resonate globally.
+          </motion.p>
+
+          {/* Service Points Line - Fixed to Single Line */}
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="flex flex-row items-center gap-x-2 md:gap-x-4 mb-10 overflow-hidden whitespace-nowrap"
+          >
+            {[
+              "Event Management",
+              "Artist Management",
+              "Digital Marketing",
+              "Brand Strategy"
+            ].map((point, i, arr) => (
+              <div key={point} className="flex items-center gap-4 md:gap-5">
+                <span className="text-[10px] md:text-xs font-bold text-zinc-700 uppercase tracking-widest">
+                  {point}
+                </span>
+                {i < arr.length - 1 && (
+                  <span className="text-zinc-300 font-light text-sm md:text-lg">||</span>
+                )}
+              </div>
+            ))}
+          </motion.div>
+
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="flex flex-col sm:flex-row items-center gap-6"
+          >
+            <Link href="/events">
+              <button className="group relative px-8 py-4 bg-zinc-900 text-white rounded-full font-bold text-sm uppercase tracking-widest hover:bg-purple-600 transition-all duration-300 shadow-xl shadow-zinc-200">
+                Explore Our Work
+                <FaArrowRight className="inline-block ml-3 transform group-hover:translate-x-1 transition-transform" />
+              </button>
+            </Link>
+            
+            <Link href="/contact" className="text-zinc-900 font-bold text-sm uppercase tracking-widest hover:text-purple-600 transition-colors">
+              Get In Touch
+            </Link>
+          </motion.div>
+
+          {/* Trust Badges */}
+          <div className="mt-16 pt-8 border-t border-zinc-100 flex flex-wrap gap-8 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
+            <div className="text-sm font-bold text-zinc-400 uppercase tracking-tighter">Event Management</div>
+            <div className="text-sm font-bold text-zinc-400 uppercase tracking-tighter">Artist Booking</div>
+            <div className="text-sm font-bold text-zinc-400 uppercase tracking-tighter">Digital PR</div>
+          </div>
+        </div>
+
+        {/* Right Content - Visual Element */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9, rotate: -5 }}
+          animate={{ opacity: 1, scale: 1, rotate: 0 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          className="relative hidden lg:block"
+        >
+          <div className="relative aspect-square w-full max-w-[500px] ml-auto">
+            {/* Main Center Image */}
+            <div className="absolute inset-0 rounded-[3rem] overflow-hidden shadow-2xl z-20">
+              <Image 
+                src="/images/eventhero.jpg" 
+                alt="Highlight Event" 
+                fill 
+                className="object-cover"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+            </div>
+            
+            {/* Decorative Glass Card */}
+            <motion.div 
+              animate={{ y: [0, -15, 0] }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute -bottom-10 -left-10 p-6 bg-white/80 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/20 z-30 flex items-center gap-4"
+            >
+              <div className="w-12 h-12 bg-gradient-to-tr from-purple-600 to-pink-500 rounded-2xl flex items-center justify-center text-white font-bold animate-pulse">
+                500+
+              </div>
+              <div>
+                <p className="text-xs font-black text-zinc-900 uppercase">Live Events</p>
+                <p className="text-[10px] text-zinc-500">Successfully Executed</p>
+              </div>
+            </motion.div>
+          </div>
+        </motion.div>
+      </div>
+    </section>
   );
 };
 

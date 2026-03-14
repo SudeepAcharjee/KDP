@@ -10,6 +10,7 @@ import HomeHero from "./components/hero";
 
 import Stats from "./components/stats";
 import AdditionalServices from "./components/AdditionalServices";
+import ArtistSection from "./components/ArtistSection";
 
 
 const HomePage = () => {
@@ -21,6 +22,7 @@ const HomePage = () => {
 
          <AdditionalServices />
          <Stats />
+         <ArtistSection />
         <ChooseUs />
         <FAQSection/>
         <CoreValuesSection/>
