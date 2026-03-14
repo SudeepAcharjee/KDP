@@ -1,4 +1,3 @@
-import LearningSteps from "./components/3rd";
 import FAQSection from "./components/FAQ";
 
 import EventPlannerShowcase from "./components/Showcase";
@@ -10,6 +9,7 @@ import CoreValuesSection from "./components/corevalue";
 import HomeHero from "./components/hero";
 
 import Stats from "./components/stats";
+import AdditionalServices from "./components/AdditionalServices";
 
 
 const HomePage = () => {
@@ -18,7 +18,8 @@ const HomePage = () => {
       <section className="flex flex-col justify-center pt-10 space-y-10">
         <HomeHero />
          <EventPlannerShowcase/>
-         <LearningSteps/>
+
+         <AdditionalServices />
          <Stats />
         <ChooseUs />
         <FAQSection/>
