@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { FaInstagram, FaArrowRight } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
 import Link from "next/link";
 
 const artists = [
