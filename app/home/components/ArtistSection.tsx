@@ -7,12 +7,12 @@ import Link from "next/link";
 
 const artists = [
   {
-    category: "Dj Services",
-    title: "DJ AVYAKT",
+    category: "Percussionist",
+    title: "KAY-DEE",
     description:
-      "The Indotech Authority: A master of the mesmerizing Indotech genre, DJ Avyakt has been captivating audiences with his unique sound for over a decade",
-    image: "/images/djavyakt.jpeg",
-    link: "/services/pr-media",
+      "KAY-DEE is a skilled percussionist who began his musical journey at the age of 10 with the tabla. He has since mastered a wide range of instruments including tabla, dhol, dholak, djembe, darbuka, drums, cajón, and wambooka, bringing versatility and energy to every performance.",
+    image: "/images/kaydee.jpeg",
+    link: "/services/percussionist",
     instagram: "https://www.instagram.com/kdp_studios/",
   },
   {
