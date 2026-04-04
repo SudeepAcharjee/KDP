@@ -1,6 +1,6 @@
 import React from 'react'
 import HeroSection from './components/hero'
-import UpcomingEvents from './components/evnets'
+import UpcomingEvents from './components/UpcomingEvents'
 
 function page() {
   return (

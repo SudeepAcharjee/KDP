@@ -1,6 +1,6 @@
 "use client";
 
-import { Calendar, Music, Megaphone, Heart, Briefcase, Home } from "lucide-react";
+import { Calendar, Music, Megaphone, Briefcase, Home } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import confetti from "canvas-confetti";
@@ -78,7 +78,7 @@ const EventPlannerShowcase = () => {
     { icon: <Calendar size={40} className="text-blue-600 mb-4" />, title: "Events", description: "From corporate galas to private parties, we handle it all with flawless execution." },
     { icon: <Music size={40} className="text-green-600 mb-4" />, title: "Artist Management", description: "Connecting you with top talent for performances, concerts, and entertainment shows." },
     { icon: <Megaphone size={40} className="text-yellow-600 mb-4" />, title: "PR & Media", description: "Amplifying your brand with strategic media outreach and public relations." },
-    { icon: <Heart size={40} className="text-purple-600 mb-4" />, title: "Wedding Planning", description: "Crafting magical weddings with personalized themes, venues, and entertainment." },
+    { icon: <Music size={40} className="text-purple-600 mb-4" />, title: "House Party", description: "Organizing unforgettable house parties with professional DJs, themed decor, and premium entertainment." },
     { icon: <Briefcase size={40} className="text-red-600 mb-4" />, title: "Corporate Events", description: "Organizing impactful conferences, product launches, and networking events." },
     { icon: <Home size={40} className="text-indigo-600 mb-4" />, title: "Venue & Catering", description: "Finding the perfect venue and curating exceptional culinary experiences." },
   ];

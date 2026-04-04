@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 import { FaArrowRight, FaMagic } from "react-icons/fa";
 import Image from "next/image";
@@ -9,16 +9,21 @@ import Image from "next/image";
 const words = [
   "Event Management",
   "Artist Management",
+  "House Party",
   "Digital Marketing",
   "Brand Strategy",
 ];
 
+const heroImages = ["/images/eventhero.jpg", "/images/h2.jpeg", "/images/h3.jpeg"];
+
 const HomeHero = () => {
   const [index, setIndex] = useState(0);
+  const [heroImageIndex, setHeroImageIndex] = useState(0);
 
   useEffect(() => {
     const timer = setInterval(() => {
       setIndex((prev) => (prev + 1) % words.length);
+      setHeroImageIndex((prev) => (prev + 1) % heroImages.length);
     }, 3000);
     return () => clearInterval(timer);
   }, []);
@@ -81,7 +86,7 @@ const HomeHero = () => {
             KDP Studios blends artistic vision with strategic excellence to elevate your brand and create unforgettable moments that resonate globally.
           </motion.p>
 
-          {/* Service Points Line - Fixed to Single Line */}
+          {/* Service Points Line - Reverted to Static */}
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -91,11 +96,11 @@ const HomeHero = () => {
             {[
               "Event Management",
               "Artist Management",
-              "Digital Marketing",
-              "Brand Strategy"
+              "House Party",
+              "Digital Marketing"
             ].map((point, i, arr) => (
               <div key={point} className="flex items-center gap-4 md:gap-5">
-                <span className="text-[10px] md:text-xs font-bold text-zinc-700 uppercase tracking-widest">
+                <span className="text-[9px] md:text-xs font-bold text-zinc-600 uppercase tracking-widest">
                   {point}
                 </span>
                 {i < arr.length - 1 && (
@@ -131,7 +136,7 @@ const HomeHero = () => {
           </div>
         </div>
 
-        {/* Right Content - Visual Element */}
+        {/* Right Content - Visual Element with Slider */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9, rotate: -5 }}
           animate={{ opacity: 1, scale: 1, rotate: 0 }}
@@ -139,32 +144,30 @@ const HomeHero = () => {
           className="relative hidden lg:block"
         >
           <div className="relative aspect-square w-full max-w-[500px] ml-auto">
-            {/* Main Center Image */}
-            <div className="absolute inset-0 rounded-[3rem] overflow-hidden shadow-2xl z-20">
-              <Image 
-                src="/images/eventhero.jpg" 
-                alt="Highlight Event" 
-                fill 
-                className="object-cover"
-                priority
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+            {/* Sliding Images Container - All same size */}
+            <div className="absolute inset-0 rounded-[3rem] overflow-hidden shadow-2xl z-20 bg-zinc-100">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={heroImageIndex}
+                  initial={{ opacity: 0, x: 50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -50 }}
+                  transition={{ duration: 0.8, ease: "easeInOut" }}
+                  className="absolute inset-0"
+                >
+                  <Image 
+                    src={heroImages[heroImageIndex]} 
+                    alt="Highlight Event" 
+                    fill 
+                    className="object-cover"
+                    priority
+                  />
+                </motion.div>
+              </AnimatePresence>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent z-10 pointer-events-none" />
             </div>
             
-            {/* Decorative Glass Card */}
-            <motion.div 
-              animate={{ y: [0, -15, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -bottom-10 -left-10 p-6 bg-white/80 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/20 z-30 flex items-center gap-4"
-            >
-              <div className="w-12 h-12 bg-gradient-to-tr from-purple-600 to-pink-500 rounded-2xl flex items-center justify-center text-white font-bold animate-pulse">
-                500+
-              </div>
-              <div>
-                <p className="text-xs font-black text-zinc-900 uppercase">Live Events</p>
-                <p className="text-[10px] text-zinc-500">Successfully Executed</p>
-              </div>
-            </motion.div>
+           
           </div>
         </motion.div>
       </div>

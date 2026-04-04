@@ -9,7 +9,7 @@ const services = [
     title: "Bespoke Event Excellence",
     description:
       "Turning visions into reality with meticulous planning and flawless execution for luxury events and grand celebrations.",
-    image: "/images/event-management.png",
+    image: "/images/bespoke-event.png",
     link: "/services/event-management",
     instagram: "https://www.instagram.com/kdp_studios/",
   },
@@ -18,7 +18,7 @@ const services = [
     title: "Talent & Representation",
     description:
       "Nurturing creativity and maximizing potential. We represent world-class talent and handle career trajectory with precision.",
-    image: "/images/artist-management.png",
+    image: "/images/h3.jpeg",
     link: "/services/artist-management",
     instagram: "https://www.instagram.com/kdp_studios/",
   },
@@ -27,7 +27,7 @@ const services = [
     title: "Strategic Digital Growth",
     description:
       "Innovating the digital landscape with data-driven strategies that amplify your brand's presence and engagement online.",
-    image: "/images/digital-marketing.png",
+    image: "/images/digital-growth.png",
     link: "/services/digital-marketing",
     instagram: "https://www.instagram.com/kdp_studios/",
   },
@@ -36,7 +36,7 @@ const services = [
     title: "Identity & Vision",
     description:
       "Crafting unique brand stories and long-term strategies that resonate with audiences and build lasting market impact.",
-    image: "/images/brand-strategy.png",
+    image: "/images/brand-vision.png",
     link: "/services/brand-strategy",
     instagram: "https://www.instagram.com/kdp_studios/",
   },

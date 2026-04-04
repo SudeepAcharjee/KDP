@@ -1,9 +1,9 @@
 "use client";
-import CustomSection from "@/components/Layout/CustomSection";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useRef } from "react";
+import { FaArrowRight } from "react-icons/fa";
 import useIntersectionObserver from "@/hooks/useIntersectionObserver";
 import { containerV, slideUpV } from "@/utils/Animation";
 
@@ -13,112 +13,124 @@ const Services = () => {
 
   const services = [
     {
-      icon: "/icons/monitorwhite.svg",
-      title: "Talent Acquisition & Recruitment",
-      description:
-        "Helping companies connect with top-skilled professionals through advanced AI-driven hiring solutions and targeted recruitment strategies.",
-      link: "/services/talent-acquisition",
+      image: "/images/event-management.png",
+      title: "Event Management",
+      description: "Meticulous planning and flawless execution for luxury events and grand celebrations.",
+      link: "/services/event-management",
+      color: "from-purple-600/80 to-indigo-600/80"
     },
     {
-      icon: "/icons/userwhite.svg",
-      title: "Job Opportunities for Individuals",
-      description:
-        "Providing individuals with personalized job recommendations that match their skills, experience, and career goals.",
-      link: "/services/job-opportunities",
+      image: "/images/artist-management.png",
+      title: "Artist Management",
+      description: "Representing world-class talent and handling career trajectory with global precision.",
+      link: "/services/artist-management",
+      color: "from-pink-600/80 to-rose-600/80"
     },
     {
-      icon: "/icons/insurancewhite.svg",
-      title: "Career Development & Upskilling",
-      description:
-        "Empowering job seekers with skill enhancement programs, career coaching, and training opportunities to boost employability.",
-      link: "/services/career-development",
+      image: "/images/h2.jpeg",
+      title: "House Party",
+      description: "Unforgettable house parties with professional DJs, themed decor, and premium sound.",
+      link: "/services/house-party",
+      color: "from-orange-600/80 to-red-600/80"
     },
     {
-      icon: "/icons/bpowhite.svg",
-      title: "Business & Workforce Solutions",
-      description:
-        "Delivering workforce planning, HR solutions, and business consulting to help companies build agile and high-performing teams.",
-      link: "/services/workforce-solutions",
+      image: "/images/digital-marketing.png",
+      title: "Digital Marketing",
+      description: "Data-driven strategies that amplify your brand's presence and engagement online.",
+      link: "/services/digital-marketing",
+      color: "from-blue-600/80 to-cyan-600/80"
     },
     {
-      icon: "/icons/bpowhite.svg",
-      title: "Freelance & Contract Hiring",
-      description:
-        "Enabling businesses to hire freelancers and contract-based professionals for flexible, short-term, or project-based work.",
-      link: "/services/freelance-hiring",
+      image: "/images/pr-media.png",
+      title: "PR & Media",
+      description: "Elevating your brand identity through strategic storytelling and media connections.",
+      link: "/services/pr-media",
+      color: "from-emerald-600/80 to-teal-600/80"
     },
   ];
 
   return (
-    <div className="relative w-full flex items-center justify-center bg-white text-black">
-      <CustomSection className="flex-col">
+    <div className="relative w-full py-24 bg-white text-black overflow-hidden font-sans">
+      <div className="max-w-7xl mx-auto px-6">
         <motion.div
           ref={ref}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
           variants={containerV}
-          className="flex flex-col space-y-3"
+          className="flex flex-col"
         >
           <motion.div
             variants={containerV}
-            className="flex flex-col gap-3 max-w-[620px] text-left"
+            className="flex flex-col gap-6 max-w-2xl text-left mb-16"
           >
-            <motion.div variants={slideUpV} className="pb-7">
-              <div className="bg-red-700 text-white px-4 py-2 rounded-[33px] w-fit">
+            <motion.div variants={slideUpV}>
+              <span className="inline-block px-4 py-1.5 text-[10px] font-bold tracking-[0.2em] text-purple-600 uppercase bg-purple-50 rounded-full border border-purple-100">
                 Our Services
-              </div>
+              </span>
             </motion.div>
+            <motion.h2
+              variants={slideUpV}
+              className="text-4xl md:text-6xl font-black tracking-tight leading-tight"
+            >
+              Exceeding <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">Expectations</span> In Every Aspect
+            </motion.h2>
             <motion.p
               variants={slideUpV}
-              className="font-bold text-[2.25rem] md:text-[3rem] leading-[30px] md:leading-[44px] text-left"
+              className="text-lg md:text-xl text-zinc-500 font-medium leading-relaxed"
             >
-              Connecting <span className="text-red-700">Companies</span> and{" "}
-              <span className="text-[#5F4B8B]">Talent</span> for Success
-            </motion.p>
-            <motion.p
-              variants={slideUpV}
-              className="text-[1.25rem] leading-[24px] text-left"
-            >
-              Our platform simplifies hiring for businesses and empowers job seekers by offering tailored job opportunities, career growth resources, and seamless recruitment solutions.
+              We blend artistic vision with strategic excellence to elevate your brand and create unforgettable moments that resonate globally.
             </motion.p>
           </motion.div>
 
           <motion.div
             variants={containerV}
-            className="pt-10 md:pt-20 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 text-left"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6"
           >
             {services.map((service, index) => (
               <motion.div
                 variants={slideUpV}
                 key={index}
-                className="max-w-[250px] min-h-[300px] h-full flex flex-col space-y-4 items-start justify-between text-left p-4"
+                className="group relative h-[450px] rounded-[2.5rem] overflow-hidden cursor-pointer shadow-xl hover:shadow-2xl transition-all duration-500"
               >
-                {/* Icon */}
-                <div className="mt-1 bg-red-700 rounded-full p-3 w-[60px] h-[60px] flex items-center justify-center">
-                  <Image
-                    src={service.icon}
-                    alt={service.title}
-                    width={36}
-                    height={36}
-                    className="w-[36px] h-[36px]"
-                  />
+                {/* Background Image */}
+                <Image
+                  src={service.image}
+                  alt={service.title}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                
+                {/* Gradient Overlay */}
+                <div className={`absolute inset-0 bg-gradient-to-b ${service.color} opacity-0 group-hover:opacity-90 transition-opacity duration-500`} />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent transition-opacity duration-500 group-hover:opacity-0" />
+
+                {/* Content */}
+                <div className="absolute inset-0 p-8 flex flex-col justify-end">
+                  <div className="transform transition-transform duration-500 group-hover:-translate-y-4">
+                    <h3 className="text-2xl font-bold text-white mb-4 leading-tight">
+                      {service.title}
+                    </h3>
+                    
+                    {/* Only show description on hover */}
+                    <p className="text-white/0 group-hover:text-white/90 text-sm leading-relaxed transition-all duration-500 h-0 group-hover:h-auto overflow-hidden">
+                      {service.description}
+                    </p>
+                    
+                    <div className="mt-6">
+                      <Link
+                        href={service.link}
+                        className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white text-black transform scale-0 group-hover:scale-100 transition-transform duration-500 delay-100 shadow-lg"
+                      >
+                        <FaArrowRight size={14} />
+                      </Link>
+                    </div>
+                  </div>
                 </div>
-                {/* Title */}
-                <Link
-                  href={service.link}
-                  className="font-bold text-[1.25rem] leading-[20px] hover:underline text-left"
-                >
-                  {service.title}
-                </Link>
-                {/* Description */}
-                <p className="text-[1rem] leading-[24px] max-w-[220px] text-left">
-                  {service.description}
-                </p>
               </motion.div>
             ))}
           </motion.div>
         </motion.div>
-      </CustomSection>
+      </div>
     </div>
   );
 };

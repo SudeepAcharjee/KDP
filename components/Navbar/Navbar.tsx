@@ -12,7 +12,7 @@ const Navbar = () => {
   const pathname = usePathname();
   const isHome = pathname === "/";
   const isAbout = pathname === "/about";
-  const isBlog = pathname === "/blogs";
+
   const isGallery = pathname === "/gallery";
   const isEvents = pathname === "/events";
   
@@ -59,7 +59,7 @@ const Navbar = () => {
               { label: "About", path: "/about", active: isAbout },
               { label: "Events", path: "/events", active: isEvents },
               { label: "Gallery", path: "/gallery", active: isGallery },
-              { label: "Blog", path: "/blogs", active: isBlog },
+          
             ].map((link) => (
               <motion.div key={link.label} className="group transition-all duration-300 relative">
                 <div

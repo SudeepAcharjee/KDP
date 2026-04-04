@@ -84,15 +84,7 @@ const CoreValuesSection = () => {
               <p className="text-gray-600 text-sm">Events Hosted</p>
             </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1.2, delay: 0.6, ease: "easeOut" }}
-              className="bg-pink-100 p-6 rounded-xl shadow-lg"
-            >
-              <h4 className="text-3xl font-bold text-blue-500">20+</h4>
-              <p className="text-gray-600 text-sm">Artists & Celebrities</p>
-            </motion.div>
+         
           </div>
 
           {/* Call to Action Button */}

@@ -10,7 +10,7 @@ const artists = [
     category: "Percussionist",
     title: "KAY-DEE",
     description:
-      "KAY-DEE is a skilled percussionist who began his musical journey at the age of 10 with the tabla. He has since mastered a wide range of instruments including tabla, dhol, dholak, djembe, darbuka, drums, cajón, and wambooka, bringing versatility and energy to every performance.",
+      "A master percussionist since age 10, KAY-DEE brings rhythmic versatility and high-octane energy to every performance with his expertise in diverse world instruments.",
     image: "/images/kaydee.jpeg",
     link: "/services/percussionist",
     instagram: "https://www.instagram.com/kdp_studios/",
@@ -23,15 +23,6 @@ const artists = [
     image: "/images/djradha.jpeg",
     link: "/services/dj-radha",
     instagram: "https://instagram.com/djradha_official",
-  },
-  {
-    category: "Event Technology",
-    title: "Advanced Event Technology",
-    description:
-      "Leverage the latest event tech for ticketing, audience engagement, and virtual event solutions.",
-    image: "/images/event-technology.jpg",
-    link: "/services/event-technology",
-    instagram: "https://www.instagram.com/kdp_studios/",
   },
 ];
 
@@ -62,8 +53,8 @@ const ArtistSection = () => {
           </motion.div>
         </div>
 
-        {/* Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Grid Layout - Adjusted for 2 items */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
           {artists.map((item, index) => (
             <motion.div
               key={index}
@@ -81,7 +72,6 @@ const ArtistSection = () => {
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                {/* Removed whitish gradient overlay */}
                 
                 {/* Category Badge */}
                 <div className="absolute top-6 left-6">
@@ -96,7 +86,7 @@ const ArtistSection = () => {
                 <h3 className="text-2xl font-bold mb-3 group-hover:text-purple-600 transition-colors duration-300 text-zinc-900">
                   {item.title}
                 </h3>
-                <p className="text-zinc-500 text-sm leading-relaxed mb-6 h-12">
+                <p className="text-zinc-500 text-sm leading-relaxed mb-6">
                   {item.description}
                 </p>
                 
